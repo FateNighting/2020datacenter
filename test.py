@@ -8,3 +8,4 @@ if __name__ == '__main__':
     print(func(a[0],a[1]))
     print("章鹏大帅哥1！")
     print("章鹏大帅哥2！")
+    print("章鹏大帅哥3！")
