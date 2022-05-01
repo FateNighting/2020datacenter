@@ -1,0 +1,43 @@
+server:
+  port: 6657
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/2020datacenter?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://10.199.130.180:3306/2020datacenter?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis:
+  typeAliasesPackage: com.datacenter.dao
+  mapperLocations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+
+management:
+#  server:
+#    port: 9001
+  endpoints:
+    web:
+      base-path: "/monitor"
+      exposure:
+        include: "*"
+    health:
+      show-details: always
+
+number:
+  util:
+   IntegerDigits: 2
+   FractionDigits: 2
+
+
+python-script:
+  base-url: "/usr/share/pyshared/DSModel/DSModel/"
+  sampling-url: "/usr/share/pyshared/DSModel/DSModel/SampleModel.py"
+  estimate-url1: "/usr/share/pyshared/DSModel/DSModel/EstimateModel.py"
+  estimate-url2: "/usr/share/pyshared/DSModel/DSModel/EstimateModel2.py"
+  estimate-csv: "/usr/share/pyshared/DSModel/DSModel/Aggregation.csv"
