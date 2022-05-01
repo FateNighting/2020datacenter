@@ -6,3 +6,4 @@ if __name__ == '__main__':
         a.append((float(sys.argv[i])))
 
     print(func(a[0],a[1]))
+    print("章鹏大帅哥2！")
